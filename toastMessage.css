@@ -1,0 +1,134 @@
+
+#toastMessage{
+    margin: auto;
+}
+
+.toast{
+    display: flex;
+    align-items:center;
+    vertical-align: middle;
+    flex-grow: 1;
+    padding: 10px 0px;
+    background-color: white;
+    border-radius: 3px;
+    border-left: 4px solid blue;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.08);
+    transition: all 1s linear;
+}
+
+.toast--success{
+    border-color: #47d864;
+    .toast__icon{
+        color: #47d864;
+    }
+}
+
+.toast--error{
+    border-color: #DD1B42;
+    .toast__icon{
+        color: #DD1B42
+    }
+}
+
+.toast--warning{
+    border-color: #ffc921;
+    .toast__icon{
+        color: #ffc921;
+    }
+}
+
+.toast + .toast {
+    margin-top: 24px;
+
+}
+
+.toast__icon, .toast__close{
+    padding: 0 16px;
+}
+
+.toast__icon{
+    font-size: 20pt;
+}
+
+.toast__body{
+    flex-grow: 1;
+ 
+}
+
+.toast__title{
+    font-size: 18pt;
+    font-weight: 800;
+    color: #333;
+}
+
+.toast__msg{
+    font-weight:0;
+    font-size: 13pt;
+    line-height: 1;
+}
+
+.toast__close{
+    font-size: 16pt;
+    color: rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: font-size 200ms linear;
+}
+
+.toast__close:hover{
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+#toast{
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 999999
+}
+
+@keyframes slideInLeft{
+    from{
+        opacity: 0.3;
+        transform: translateX(calc(100% + 32px));
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut{
+    to{
+        opacity: 0;
+    }
+}
+
+.buttons{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    .btn{
+        cursor: pointer;
+        border-radius: 10px;
+      
+    }
+    .btn--success{
+        background-color: #47d864;
+        padding: 10px 5px;
+        font-size: 18pt;
+        
+    }
+    .btn--error{
+        background-color: #DD1B42;
+        padding: 10px 5px;
+        font-size: 18pt;
+        
+    }
+    .btn--success+.btn--error{
+        margin: 20px;
+    }
+    
+    
+}
